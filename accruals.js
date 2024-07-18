@@ -27,7 +27,7 @@ const calculateMonthlyAccruals = (baseVacation, increase, increaseDate) => {
   // Example input values
   const baseVacation = 15;
   const increase = 3;
-  const increaseDate = '2024-12-01';
+  const increaseDate = '2024-05-01';
   
   const accruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate);
   console.log(accruals);

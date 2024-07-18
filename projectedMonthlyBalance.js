@@ -24,7 +24,7 @@ function calculateYearlyProjectedBalances(monthlyAccrual, yearEndBalance, daysTa
   const daysTaken = [1, 2, 1.5, 0, 3, 2, 1, 0, 2, 0, 1, 0]; // Example days taken each month
   
   const accruals = calculateYearlyProjectedBalances(monthlyAccrual, yearEndBalance, daysTaken);
-  console.log(accruals);
+//   console.log(accruals);
   
   // Print the projected balances for each month
   accruals.forEach(acc => {

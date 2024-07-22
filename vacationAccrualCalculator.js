@@ -24,7 +24,7 @@ const calculateMonthlyAccruals = (baseVacation, increase, increaseDate) => {
   console.log("Monthly Accruals:", monthlyAccruals);
 
   // Function to calculateProjecteMonthlydBalances
-  const calculateProjecteMonthlydBalances = (monthlyAccruals, yearEndBalance, daysTaken) => {
+  const calculateProjectedMonthlydBalances = (monthlyAccruals, yearEndBalance, daysTaken) => {
     let currentBalance = yearEndBalance;  
     return monthlyAccruals.map((accrual, index) => {
       currentBalance += accrual.accrual - daysTaken[index];
@@ -35,7 +35,7 @@ const calculateMonthlyAccruals = (baseVacation, increase, increaseDate) => {
   // Example input values for calculateProjecteMonthlydBalances
   const yearEndBalance = 2.33;
   const daysTaken = [1, 2, 1.5, 0, 3, 2, 1, 0, 2, 0, 1, 0]; // Example days taken each month 
-  const projectedBalances = calculateProjectedMonthlyBalances(monthlyAccruals, yearEndBalance, daysTaken);
+  const projectedBalances = calculateProjectedMonthlydBalances(monthlyAccruals, yearEndBalance, daysTaken);
   
   // Print the projected balances for each month
   projectedBalances.forEach(acc => {

@@ -63,7 +63,7 @@ const months = [
           return { month, accrual: '-' }; // Display "-" for months before hire date in the current year
         } else if (index === hireDateObj.getUTCMonth()) {
           const totalWorkingDays = calculateTotalWorkingDaysInMonth(currentYear, index);
-          const availableWorkingDays = calculateAvailableWorkingDaysInRange(hireDateObj, new Date(currentYear, index, new Date(currentYear, index + 1, 0).getDate()));
+          const availableWorkingDays = calculateAvailableWorkingDaysInRange(hireDateObj, new Date(currentYear, index, new Date(currentYear, index+1 , 0).getDate()));
           console.log(`Available Working Days in ${months[index]}: ${availableWorkingDays}`);
           const accrual = (baseAccrual / totalWorkingDays) * availableWorkingDays;
           return { month, accrual: parseFloat(accrual.toFixed(2)) };
@@ -81,7 +81,7 @@ const months = [
   const baseVacation = 15;
   const increase = 3;
   const increaseDate = '2024-10-01';  
-  const hireDate = '2024-07-10'; // Example hire date
+  const hireDate = '2023-08-12'; // Example hire date
   const monthlyAccruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate, hireDate);
   console.log("Monthly Accruals:", monthlyAccruals);
   
@@ -91,7 +91,7 @@ const months = [
   const currentYear = new Date().getUTCFullYear();
   if (hireYear === currentYear) {
     const totalWorkingDays = calculateTotalWorkingDaysInMonth(currentYear, hireMonth);
-    const availableWorkingDays= calculateAvailableWorkingDaysInRange(new Date(hireDate), new Date(currentYear, hireMonth, new Date(currentYear, hireMonth, 0).getDate()));
+    const availableWorkingDays= calculateAvailableWorkingDaysInRange(new Date(hireDate), new Date(currentYear, hireMonth, new Date(currentYear, hireMonth + 1, 0).getDate()));
     console.log(`Working Days in ${months[hireMonth]}: ${totalWorkingDays}`);
     console.log(`Available Working Days in ${months[hireMonth]}: ${availableWorkingDays}`);
   }

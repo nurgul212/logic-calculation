@@ -25,20 +25,23 @@ const months = [
   
   // Function to calculate the number of availabe working days from a specific start date to a specific end date
   const calculateAvailableWorkingDaysInRange = (startDate, endDate) => {
-  let availableWorkingDays = 0;
-  const currentDate = new Date(startDate);
+    let availabelWorkingDays = 0;
 
-  while (currentDate <= endDate) {
-    const dayOfWeek = currentDate.getDay();
-    // Increment workedDays if the day is not Saturday (6) or Sunday (0)
-    if (dayOfWeek !== 0 && dayOfWeek !== 6) {
-      availableWorkingDays++;
+    for(let currentDate = new Date(startDate); currentDate <=endDate; currentDate.setDate(currentDate.getDate() + 1 )){
+      // console.log("currentDate: " + currentDate);
+      const dayOfWeek = currentDate.getDay();
+      console.log("Print currentDate: " + currentDate.toDateString() + " Day of Week: " + dayOfWeek);
+      console.log("currentDate.setDate(currentDate.getDate() + 1 )" + (currentDate.toDateString()));
+
+      if(dayOfWeek !== 0 && dayOfWeek !== 6) {
+        availabelWorkingDays++;
+        console.log("availableWorkingDays== " + availabelWorkingDays);
+      }
+
     }
-    currentDate.setDate(currentDate.getDate()+1);
-  }
 
-  return availableWorkingDays;
-}
+    return availabelWorkingDays;
+  }
   
   // Function to calculate monthly accruals considering the hire date and increase date
   const calculateMonthlyAccruals = (baseVacation, increase, increaseDate, hireDate) => {
@@ -84,29 +87,34 @@ const months = [
   
   // Example input values for calculateMonthlyAccruals 
   const baseVacation = 15;
-  const increase = 3;
-  const increaseDate = '2024-05-01';  
-  const hireDate = '2024-08-22'; // Example hire date
+  const increase =3;
+  const increaseDate = '2024-08-01';
+  const hireDate = '2024-07-29'; // Example hire date
   const monthlyAccruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate, hireDate);
   console.log("Monthly Accruals:", monthlyAccruals);
   
+  const hireMonth = new Date(hireDate).getUTCMonth();
+  const hireYear = new Date(hireDate).getUTCFullYear();
+  const hireDay = new Date(hireDate).getUTCDate(); // Extract the day of the month
+
   // Calculate and print total working days and available working days in the hired month if the hire date is this year
-  const hireDateObj = new Date(hireDate);
-  const hireYear = hireDateObj.getUTCFullYear();
+  // const hireDateObj = new Date(hireDate);
+  const hireDateObj = new Date(Date.UTC(hireYear, hireMonth, hireDay+1));
   const currentYear = new Date().getUTCFullYear();
 
   if (hireYear === currentYear) {
     const hireMonth = hireDateObj.getUTCMonth(); //method returns the month of the specified date according to universal time, as a zero-based value (where January is 0 and December is 11).
+    console.log("hireMonth: " + hireMonth);
     const lastDayOfHiredMonth = new Date(currentYear, hireMonth + 1, 0).getDate();
+    // console.log("lastDayOfHireMonth: " + lastDayOfHiredMonth);
     const endDate = new Date(currentYear, hireMonth, lastDayOfHiredMonth);
-
-    console.log("hireMonth " + hireMonth);
+    console.log("endDate " + endDate);
+    console.log("hireDateObj: " + hireDateObj);
 
     const totalWorkingDays = calculateTotalWorkingDaysInMonth(currentYear, hireMonth);
     const availableWorkingDays= calculateAvailableWorkingDaysInRange(hireDateObj, endDate);
-    console.log("available working days in July: " + availableWorkingDays);
 
-    console.log(`Working Days in ${months[hireMonth]}: ${totalWorkingDays}`);
+    console.log(`Total Working Days in ${months[hireMonth]}: ${totalWorkingDays}`);
     console.log(`Available Working Days in ${months[hireMonth]}: ${availableWorkingDays}`);
   }
   

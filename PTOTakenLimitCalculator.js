@@ -1,5 +1,6 @@
-// Define the year for which we are calculating working days
-const year = 2024;
+// Get the current year dynamically
+const year = new Date().getFullYear();
+console.log("This year is : " + year)
 
 // Define the list of statutory holidays (month is 0-based in JavaScript Date)
 const holidays = [

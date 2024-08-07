@@ -71,7 +71,8 @@ const months = [
             const lastDayOfMonth = new Date(currentYear, index + 1, 0).getDate();
             // Create a Date object for the end of the month
             const endOfMonthDate = new Date(currentYear, index, lastDayOfMonth);
-            const availableWorkingDays = calculateAvailableWorkingDaysInRange(hireDateObj, endOfMonthDate);
+            const availableWorkingDays = calculateAvailableWorkingDaysInRange(hireDateObj, endOfMonthDate); 
+
             // console.log(`Available Working Days in ${months[index]}: ${availableWorkingDays}`);
             const accrual = (baseAccrual / totalWorkingDays) * availableWorkingDays;
             return { month, accrual: parseFloat(accrual.toFixed(2)) };

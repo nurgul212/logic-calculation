@@ -19,7 +19,7 @@ const months = [
   // Example input values for calculateMonthlyAccruals 
   const baseVacation = 15;
   const increase = 3;
-  const increaseDate = '2024-05-01';  
+  const increaseDate = '2024-09-01';  
   const monthlyAccruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate);
   console.log("Monthly Accruals:", monthlyAccruals);
 
@@ -45,8 +45,8 @@ const months = [
   };
   
   // Example input values for calculateProjectedMonthlyBalances
-  const yearEndBalance = 10;
-  const daysTaken = [1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0]; // Example days taken each month 
+  const yearEndBalance = 0;
+  const daysTaken = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Example days taken each month 
   const currentBalanceLimit = baseVacation + increase;
   const projectedBalances = calculateProjectedMonthlyBalances(monthlyAccruals, yearEndBalance, daysTaken, currentBalanceLimit);
   
@@ -88,7 +88,12 @@ const months = [
     const totalWorkingDays = calculateWorkingDaysInMonth(year, selectedMonth);
     const workedDaysSoFar = selectedDay - Math.floor(selectedDay / 7) * 2; // Rough estimate of worked days
     console.log(`Total worked days so far in ${months[selectedMonth]} ${year}:`, workedDaysSoFar);
-  
+
+    // console.log("previousMonthBalance ==== " + previousMonthBalance);
+    // console.log("currentMonthAccrual ==== " + currentMonthAccrual);
+    // console.log("totalWorkingDays ==== " + totalWorkingDays);
+    // console.log("workedDaysSoFar ==== " + workedDaysSoFar);
+   
     // Calculate the balance for the selected date
     const selectedDateBalance = parseFloat(previousMonthBalance) + (currentMonthAccrual / totalWorkingDays) * workedDaysSoFar;
   
@@ -96,7 +101,7 @@ const months = [
   };
   
   // Example usage of calculateSelectedDateBalance
-  const selectedDate = '2024-07-24';
+  const selectedDate = '2024-07-31';
   const selectedDateObj = new Date(selectedDate);
   const year = selectedDateObj.getFullYear();
   const selectedMonth = selectedDateObj.getUTCMonth();

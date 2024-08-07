@@ -1,6 +1,6 @@
 // Get the current year dynamically
 const year = new Date().getFullYear();
-console.log("This year is : " + year)
+// console.log("This year is : " + year)
 
 // Define the list of statutory holidays (month is 0-based in JavaScript Date)
 const holidays = [

@@ -45,7 +45,7 @@ const months = [
   };
   
   // Example input values for calculateProjectedMonthlyBalances
-  const yearEndBalance = 0;
+  const yearEndBalance = 3;
   const daysTaken = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Example days taken each month 
   const currentBalanceLimit = baseVacation + increase;
   const projectedBalances = calculateProjectedMonthlyBalances(monthlyAccruals, yearEndBalance, daysTaken, currentBalanceLimit);

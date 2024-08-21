@@ -20,13 +20,18 @@ const calculateWorkingDaysFromHireDate = (hireDate, endDate) => {
   };
   
   // Example usage
-  const hireDate = new Date(Date.UTC(2024, 6, 22)); // July is month 6 (0-based)
-  const endDate = new Date(Date.UTC(2024, 6, 31)); // July is month 6 (0-based)
+  // const hireDate = new Date(Date.UTC(2024, 6, 22)); // July is month 6 (0-based)
+  // const endDate = new Date(Date.UTC(2024, 6, 31)); // July is month 6 (0-based)
+
+  const hireDate = '2024-09-18';
+  const hireDateObj = new Date(hireDate);
+  const year = hireDateObj.getUTCFullYear();
+  const hireMonth = hireDateObj.getUTCMonth();
+  const hireDay = hireDateObj.getDate();
   
-  console.log("hireDate: " + hireDate.toDateString());
-  console.log("endDate: " + endDate.toDateString());
+  console.log("hireDate: " + hireDate);
+  // console.log("endDate: " + endDate);
   
   const workingDays = calculateWorkingDaysFromHireDate(hireDate, endDate);
-  console.log(`Total working days from ${hireDate.toDateString()} to ${endDate.toDateString()}: ${workingDays}`);
+  console.log(`Total working days from ${hireDate} to ${endDate}: ${workingDays}`);
   
-

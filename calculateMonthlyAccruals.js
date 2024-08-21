@@ -89,8 +89,8 @@ const months = [
   // Example input values for calculateMonthlyAccruals 
   const baseVacation = 15;
   const increase =3;
-  const increaseDate = '2024-08-01';
-  const hireDate = '2024-07-29'; // Example hire date
+  const increaseDate = '2024-10-01';
+  const hireDate = '2024-08-20'; // Example hire date
   const monthlyAccruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate, hireDate);
   console.log("Monthly Accruals:", monthlyAccruals);
   
@@ -105,7 +105,7 @@ const months = [
 
   if (hireYear === currentYear) {
     const hireMonth = hireDateObj.getUTCMonth(); //method returns the month of the specified date according to universal time, as a zero-based value (where January is 0 and December is 11).
-    console.log("hireMonth: " + hireMonth);
+    console.log("hireMonth: " + (hireMonth+1));
     const lastDayOfHiredMonth = new Date(currentYear, hireMonth + 1, 0).getDate();
     // console.log("lastDayOfHireMonth: " + lastDayOfHiredMonth);
     const endDate = new Date(currentYear, hireMonth, lastDayOfHiredMonth);

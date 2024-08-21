@@ -34,7 +34,7 @@ const calculateMonthlyAccruals = (baseVacation, increase, increaseDate) => {
   
   // Example input values for calculateProjecteMonthlydBalances
   const yearEndBalance = 2.33;
-  const daysTaken = [1, 2, 1.5, 0, 3, 2, 1, 0, 2, 0, 1, 0]; // Example days taken each month 
+  const daysTaken = [0,0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]; // Example days taken each month 
   const projectedBalances = calculateProjectedMonthlydBalances(monthlyAccruals, yearEndBalance, daysTaken);
   
   // Print the projected balances for each month

@@ -117,7 +117,7 @@ const calculateSelectedDateBalance = (selectedDate, projectedBalances, monthlyAc
 const baseVacation = 15;
 const increase = 0;
 const increaseDate = '0'; // No increase
-const hireDate = '2024-06-17'; // Example hire date
+const hireDate = '2024-08-20'; // Example hire date
 
 // Calculate monthly accruals
 const monthlyAccruals = calculateMonthlyAccruals(baseVacation, increase, increaseDate, hireDate);
@@ -141,7 +141,7 @@ projectedBalances.forEach(acc => {
 });
 
 // Example usage of calculateSelectedDateBalance
-const selectedDate = '2024-07-30';
+const selectedDate = '2024-09-19';
 const selectedDateObj = new Date(selectedDate);
 const year = selectedDateObj.getUTCFullYear();
 const selectedMonth = selectedDateObj.getUTCMonth();
@@ -153,4 +153,3 @@ console.log(`Total working days in ${months[selectedMonth]} ${year}:`, totalWork
 
 const selectedDateBalance = calculateSelectedDateBalance(selectedDate, projectedBalances, monthlyAccruals);
 console.log(`Selected Date Balance (${selectedDate}):`, selectedDateBalance);
-

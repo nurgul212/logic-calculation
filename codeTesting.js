@@ -41,3 +41,7 @@ const month = hireDateObj.getMonth();
 const workingDays = (lastDayOfMonth - hireDay+1) - Math.floor((lastDayOfMonth - hireDay+1) / 7) * 2;
 // const calc = (31-22+1)-Math.floor((31-21)/7) * 2;
 console.log("workingDays: " + workingDays);
+
+
+const current = 15.000000000;
+console.log("Current with 2 decimal: " + current.toFixed(2));

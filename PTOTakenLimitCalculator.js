@@ -10,7 +10,9 @@ const holidays = [
     new Date(year, 6, 1),    // Canada Day: July 1
     new Date(year, 8, 2),    // Labour Day: September 2
     new Date(year, 9, 14),   // Thanksgiving Day: October 14
+    new Date(year, 10, 11),   // Remember's Day: November 11
     new Date(year, 11, 25),  // Christmas Day: December 25
+    new Date(year, 11, 26),  // Boxing Day: December 26
     // Add other holidays as needed
 ];
 

@@ -88,11 +88,6 @@ const months = [
     const totalWorkingDays = calculateWorkingDaysInMonth(year, selectedMonth);
     const workedDaysSoFar = selectedDay - Math.floor(selectedDay / 7) * 2; // Rough estimate of worked days
     console.log(`Total worked days so far in ${months[selectedMonth]} ${year}:`, workedDaysSoFar);
-
-    // console.log("previousMonthBalance ==== " + previousMonthBalance);
-    // console.log("currentMonthAccrual ==== " + currentMonthAccrual);
-    // console.log("totalWorkingDays ==== " + totalWorkingDays);
-    // console.log("workedDaysSoFar ==== " + workedDaysSoFar);
    
     // Calculate the balance for the selected date
     const selectedDateBalance = parseFloat(previousMonthBalance) + (currentMonthAccrual / totalWorkingDays) * workedDaysSoFar;

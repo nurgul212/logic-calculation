@@ -34,7 +34,7 @@ function getAvailableWorkingDays(year, month, hireDate) {
 
 // Example usage:
 let year = 2024;
-let month = 7; // August (0-based index, so 7 = August)
+let month = 8; // August (0-based index, so 7 = August)
 let hireDate = 1; // August 20
 
 let availableWorkingDays = getAvailableWorkingDays(year, month, hireDate);

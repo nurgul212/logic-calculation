@@ -26,7 +26,7 @@ function getPastWorkingDays(year, month, currentDate) {
 function getAvailableWorkingDays(year, month, hireDate) {
     let totalWorkingDays = getWorkingDaysInMonth(year, month);
     let pastWorkingDays = getPastWorkingDays(year, month, hireDate);
-    console.log("PastWorkingDays 2: " + pastWorkingDays);
+    console.log("PastWorkingDays : " + pastWorkingDays);
     let availableWorkingDays = totalWorkingDays - pastWorkingDays;
 
     return availableWorkingDays;
@@ -34,10 +34,11 @@ function getAvailableWorkingDays(year, month, hireDate) {
 
 // Example usage:
 let year = 2024;
-let month = 8; // August (0-based index, so 7 = August)
-let hireDate = 1; // August 20
+let month = 9; // August (0-based index, so 8 = September)
+let date = 16; // September 24
+let hireDate = "2024-10-16";
 
-let availableWorkingDays = getAvailableWorkingDays(year, month, hireDate);
+let availableWorkingDays = getAvailableWorkingDays(year, month, date);
 
-console.log("Total working days in August: " + getWorkingDaysInMonth(year, month));
-console.log("Available working days for hire date August 20: " + availableWorkingDays);
+console.log("Total working days in October: " + getWorkingDaysInMonth(year, month));
+console.log("Available working days for hire date October 16: " + availableWorkingDays);
